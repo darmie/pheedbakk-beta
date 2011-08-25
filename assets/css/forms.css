@@ -1,0 +1,108 @@
+@charset "utf-8";
+/* General */
+input {
+	margin-bottom:10px;
+}
+.captcha {
+	position:relative;
+	left:35%;
+}
+.form_title {
+	text-align:center;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-style:italic;
+}
+.form_error {
+	position:relative;
+	left:35%;
+}
+.form_error p {
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color:rgba(255,153,0,1);
+}
+#login-errors p{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#FF0000;
+}
+.submit_btn {
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	-o-border-radius:10px;
+	border-radius:10px;
+	border:none;
+	background:rgba(255,153,0,1);
+	color:#FFF;
+	font-weight:bold;
+	width:100px;
+	height:30px;
+	cursor:pointer;
+	margin-bottom:10px;
+	margin-top:10px;
+}
+.submit_btn_blue {
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	-o-border-radius:10px;
+	border-radius:10px;
+	border:none;
+	background:#0099FF;
+	padding:15px;
+	color:#FFF;
+	font-weight:bold;
+	width:100px;
+	height:30px;
+	cursor:pointer;
+	margin-bottom:10px;
+	margin-top:10px;
+	text-decoration:none;
+	font-size:13px;
+}
+
+/* Specific Form Styles*/
+#loginform label {
+	display:block;
+	width:100px;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	text-transform:uppercase;
+}
+#loginform input[type='password'],input[type='text'] {
+	height:25px;
+	width:250px;
+	background:#EDEDED;
+	border:1px solid rgba(234,234,234,1);
+	font:status-bar;
+	font-size:14px;
+}
+#loginform input[type='password']:focus {
+	-moz-box-shadow:0 4px 4px #00CCFF;
+}
+#loginform input[type='text']:focus {
+	-moz-box-shadow:0 4px 4px #00CCFF;
+}
+#signup {
+	margin-left:5%;
+	margin-right:5%;
+	width:90%;
+}
+#signupform {
+	margin:10% 10% 10% 10%;
+}
+#signupform label {
+	display:inline-block;
+	width:200px;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	text-transform:uppercase;
+}
+#signupform input[type='password'],input[type='text'] {
+	height:25px;
+	width:250px;
+	background:#EDEDED;
+	border:1px solid rgba(234,234,234,1);
+	font:status-bar;
+	font-size:14px;
+}

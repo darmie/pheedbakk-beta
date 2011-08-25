@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* user forms */
+.hidden-inline-form {
+	display:none;
+}
+.submit_btn {
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	-o-border-radius:10px;
+	border-radius:10px;
+	border:none;
+	background:rgba(255,153,51,1);
+	color:#FFF;
+	font-weight:bold;
+	width:100px;
+	height:30px;
+	cursor:pointer;
+	margin-bottom:10px;
+	margin-top:10px;
+}
+/*-----Search-------*/
+#site-search input[type="text"] {
+	width:250px;
+	height:20px;
+	border:1px #F90 solid;
+	padding-right:20px;
+}
+#site-search input[type='submit'] {
+	height:20px;
+	background:url(/pheedbak/assets/img/search-ltr.png) no-repeat #ffffff center;
+	text-indent:-999px;
+	color: transparent;
+	cursor:pointer;
+	border:none;
+}
+/*-----Pheed------------*/
+#pheedform textarea {
+	-moz-border-radius:9px;
+	-webkit-border-radius:9px;
+	border-radius:9px;
+	border:1px solid rgba(153,153,153,1);
+	padding-left:5px;
+}
+/*---------------Keywords---------------------*/
+#keyword_form {
+	margin:20px 20px 20px 20px;
+	background:#FFFFFF;
+}
+#newKeyword {
+	padding:20px;
+}

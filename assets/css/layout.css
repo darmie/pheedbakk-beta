@@ -1,0 +1,84 @@
+/*------------------------------------------------------------------------------------------------
+		Layout Styleheet For PheedBakk
+	File: layout.css
+	Author: Patrick Foh
+	Date: 7-08-2011
+------------------------------------------------------------------------------------------------*/
+/* Import Stylesheets */
+
+	@import 'landing.css';
+	@import 'page_styles.css';
+	
+/* General Style */
+button{
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	-o-border-radius:10px;
+	border-radius:10px;
+	border:none;
+	background:rgba(0,153,255,1);
+	color:#FFF;
+	font-weight:bold;
+	width:100px;
+	height:30px;
+	cursor:pointer;
+	margin-botton:10px;
+	margin-top:10px;
+}
+.floating {
+	float:left;
+	margin-left:2%;
+	margin-top:3%;
+	margin-bottom:4%;
+	-moz-border-radius:20px;
+	-webkit-border-radius:20px;
+	-ms-border-radius:20px;
+	border-radius:20px;
+	border-width:thin;
+	background:#FFF;
+	-webkit-box-shadow: 4px 4px 4px 4px #C4C4C4;
+	-moz-box-shadow: 4px 4px 4px 4px #C4C4C4;
+	-ms-box-shadow: 4px 4px 4px 4px #C4C4C4;
+	box-shadow: 4px 4px 4px 4px #C4C4C4;
+}
+/*------------------------ Layout----------------------------------------------------------*/
+#header {
+		position:absolute;
+		top:0px;
+		left:0px;
+		width:100%;
+		background:#ffffff;
+		border-bottom:2px solid #000000;
+	}
+/*-------------------------Content------------------------------------------------------------*/
+#content_for_layout {
+	margin-top:9%;
+}
+/*----Footer---------------*/
+#footer {
+	clear:both;
+	width:100%;
+}
+#copyright {
+	float:left;
+	margin-left:2%;
+	padding:4px;
+	font:13px;
+}
+#footer_links {
+	float:left;
+	margin-left:10%;
+}
+#pages li {
+	float:left;
+	list-style:none;
+	padding:4px;
+}
+#pages li  a {
+	color:rgba(0,204,255,1);
+	text-decoration:none;
+	font-size:12px;
+}
+#pages li a:hover {
+	color:rgba(255,102,0,1);
+}

@@ -1,0 +1,184 @@
+@charset "utf-8";
+/*----------------------------------------------------------------------------------------------
+		User area layout
+		@file - user-layout.css
+		@author - Patrick Foh
+-----------------------------------------------------------------------------------------------*/
+@import 'user-forms.css';
+@import 'user-home.css';
+@import '../page_styles.css';
+body {
+	background:rgba(255,255,255,1);
+}
+.floating {
+	float:left;
+	margin-left:2%;
+	margin-top:3%;
+	margin-bottom:4%;
+	-moz-border-radius:20px;
+	-webkit-border-radius:20px;
+	-ms-border-radius:20px;
+	border-radius:20px;
+	border-width:thin;
+	background:#FFF;
+	-webkit-box-shadow: 4px 4px 4px 4px #C4C4C4;
+	-moz-box-shadow: 4px 4px 4px 4px #C4C4C4;
+	-ms-box-shadow: 4px 4px 4px 4px #C4C4C4;
+	box-shadow: 4px 4px 4px 4px #C4C4C4;
+}
+.pheed {
+	font-size:13px;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	margin-bottom:2%;
+	border-bottom:2px solid rgba(153,153,153,1);
+}
+.pheed a {
+	color:#FF6600;
+	font:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	text-decoration:none;
+}
+.pheed_meta {
+	position:relative;
+	left:5%;
+}
+.pheed_meta span{
+	font-size:10px;
+	padding-left:20px;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#FF9933;
+}
+.pheed_meta span img {
+	margin:0.2em;
+}
+.pheed_meta span .comment_trigger {
+	cursor:pointer;
+}
+.pheed_comments {
+	padding:5px;
+	background:#CCCCCC;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:12px;
+	margin-bottom:10px;
+}
+.pheed_comments .comment span{
+	background:rgba(255,102,0,1);
+	color:#ffffff;
+}
+.comment_box {
+}
+.word {
+	border-bottom:2px solid #00000;
+	margin-bottom:25px;
+	border-bottom:1.5px solid rgba(204,204,204,1);
+	padding:5px;
+	}
+.word a{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:white;
+	background:orange;
+	text-decoration:none;
+	margin:0.3em;
+	padding-left:5px;
+	padding-right:5px;
+}
+.delete_item {
+	float:right;
+}
+.delete_item img{
+	margin:0.3em;
+	border:none;
+	cursor:pointer;
+}
+#header {
+	width:100%;
+	position:absolute;
+	left:0px;
+	top:0px;
+	background:#ffffff;
+	border-bottom:2px solid #000000;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+#search-box {
+	float:left;
+	margin-left:350px;
+	margin-top:-37px;
+}
+#userbox {
+	position:absolute;
+	left:70%;
+	top:-5%;
+}
+#userbox ul li {
+	float:left;
+	list-style:none;
+	padding:5px;
+}
+#userbox ul li a  {
+	background:#FF9900;
+	color:#FFFFFF;
+	padding:3px;
+	text-decoration:none;
+	font-weight:bold;
+}
+.sub-menu {
+	display:none;
+}
+.sub-menu li a {
+	font-size:13px;
+	padding:1px;
+}
+#userbox ul li ul li {
+	float:none;
+}
+#userbox ul li:hover > .sub-menu {
+	display:block;
+	background:#FF9900;
+	margin-left:-57px;
+	-moz-border-radius-bottomleft:10px;
+	-moz-border-radius-bottomright:10px;
+	-webkit-border-radius-bottomright:10px;
+	-webkit-border-radius-bottomright:10px;
+	border-radius-bottomright:10px;
+	border-radius-bottomright:10px;
+}
+.sub-menu li a {
+
+}
+/*----Content----------------------*/
+
+#content_for_layout {
+	margin-top:9%;
+	margin-bottom:2%;
+}
+/*----Footer---------------*/
+#footer {
+	clear:both;
+	width:100%;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+#copyright {
+	float:left;
+	margin-left:2%;
+	padding:4px;
+	font-size:13px;
+}
+#footer_links {
+	float:left;
+	margin-left:10%;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+#pages li {
+	float:left;
+	list-style:none;
+	padding:4px;
+}
+#pages li  a {
+	color:rgba(0,204,255,1);
+	text-decoration:none;
+	font-size:12px;
+}
+#pages li a:hover {
+	color:rgba(255,102,0,1);
+}

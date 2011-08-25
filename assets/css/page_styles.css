@@ -1,0 +1,61 @@
+#signup_complete {
+		width:90%;
+		padding:20px;
+		margin:10px 10px 10px 10px;
+		font-size:14px;
+		line-height:5px;
+		text-align:left;
+		font-family:Tahoma, Geneva, sans-serif;
+	}
+#accountactive {
+		width:90%;
+		padding:20px;
+		margin:10px 10px 10px 10px;
+		font-size:14px;
+		line-height:5px;
+		text-align:left;
+		font-family:Tahoma, Geneva, sans-serif;
+	}
+#feedback {
+		width:90%;
+		padding:20px;
+		margin:10px 10px 10px 10px;
+		font-size:14px;
+		text-align:left;
+		font-family:Tahoma, Geneva, sans-serif;
+}
+#text {
+	float:left;
+	width:40%;
+	border-right:2px solid rgba(204,204,204,1);
+	padding:10px;
+}
+#feedback-form {
+	float:left;
+	margin-left:3%;
+}
+#feedback-form p {
+	color:#FF6600;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:14px;
+}
+#feedbackform label {
+	display:block;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	padding:4px;
+}
+#feedbackform input[type='text'] {
+	margin-bottom:15px;
+	width:200px;
+	background:#999999;
+	border:1px solid rgba(102,102,102,1);
+}
+#feedbackform textarea {
+	width:250px;
+}
+.progress {
+		position:relative;
+		left:50px;
+}

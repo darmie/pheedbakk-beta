@@ -1,0 +1,28 @@
+@import 'forms.css';
+/* Landing page style */
+#landing_page_content {
+	margin-left:5%;
+	margin-right:5%;
+	width:90%;
+}
+#intro {
+	float:left;
+	width:350px;
+	padding:10px;
+	margin:10px 10px 10px 10px;
+}
+#login {
+	float:left;
+	margin-left:2%;
+	padding:20px;
+	margin:10px 10px 10px 10px;
+	border-left:2px solid rgba(87,87,87,1);
+}
+#login a {
+	color:#0099FF;
+	text-decoration:none;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+#login a:hover {
+	color:rgba(255,102,0,1);
+}

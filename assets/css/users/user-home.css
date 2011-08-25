@@ -1,0 +1,55 @@
+@charset "utf-8";
+/*----------------------------------------------------------------------------------------------
+	Stylesheet For User home
+	Author: Patrick Foh
+	Date: 12/08/2011
+-----------------------------------------------------------------------------------------------*/
+body {
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+#timeline {
+	margin-top:-2%;
+	margin-left:2%;
+	margin-right:2%;
+	overflow:hidden;
+}
+#timeline h3 {
+	padding-left:14px;
+}
+#left-bar,#main-page,#right-bar {
+	float:left;
+	margin-left:2%;
+}
+#main-page {
+	width:50%;
+}
+#left-bar {
+	padding:20px;
+	height:100%;
+}
+#right-bar {
+	padding:20px;
+	width:20%;
+	height:100%;
+}
+#status {
+	position:relative;
+	left:120px;
+	top:-39px;
+}
+#menu ul li {
+	list-style:none;
+	padding:4px;
+	font-family:Arial, Helvetica, sans-serif;
+	padding:2px;
+}
+#menu ul li a {
+	color:rgba(0,153,255,1);
+	text-decoration:none;
+	font-size:14px;
+}
+#menu ul li a:hover {
+	color:#FF6600;
+	font-size:15px;
+}
+
