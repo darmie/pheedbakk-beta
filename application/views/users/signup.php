@@ -45,13 +45,7 @@
 		<div class="form_error">
 			<?php echo form_error('passconf'); ?>
 		</div>
-		
-			<div class="captcha">
-				<?php echo $recaptcha; ?>
-			</div>
-		<div class="form_error">
-			<?= form_error('recaptcha_response_field') ?>
-		</div>
+        
 		<label for="submit"></label>
 		<input type="submit" value="Join" name="submit" class="submit_btn">
 		

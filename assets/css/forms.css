@@ -49,7 +49,10 @@ input {
 	border-radius:10px;
 	border:none;
 	background:#0099FF;
-	padding:15px;
+	padding-left:20px;
+	padding-right:20px;
+	padding-top:10px;
+	padding-top:10px;
 	color:#FFF;
 	font-weight:bold;
 	width:100px;

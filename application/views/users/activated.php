@@ -7,6 +7,7 @@
 		<p>Please visit the help section, to help you get aquitainted with PheedBakk</p>
 		<p>You can also send us feedback, to helps us make PheedBakk better for you</p>
 		<p>Thank you for using PheedBakk</p>
+        <?php echo anchor("","Login",array("class"=>"submit_btn_blue")); ?>
 	</div>
 	
 </div>

@@ -67,17 +67,12 @@
  		 */
  		function signup() {
  			
- 			//load captcha helper
- 			$this->load->library('recaptcha');
-			 $this->lang->load('recaptcha');
- 			
  			//Data to be passed to the views
  			$data['title'] = "Sign Up | PheedBakk";
  			$data['logged'] = $this->ion_auth->logged;
  			$data['username'] = $this->ion_auth->username;
  			$data['user'] = $this->ion_auth->user;
  			$data['user_id'] = $this->ion_auth->user_id;
- 			$data['recaptcha'] = $this->recaptcha->get_html();
  			
  			//Validate Form
  			$this->form_validation->set_rules('first_name','First Name','required|alpha');
@@ -87,7 +82,6 @@
  			$this->form_validation->set_rules('username','Username','required');
  			$this->form_validation->set_rules('password','Password','required|min_lenght[6]|max_lenght[10]');
  			$this->form_validation->set_rules('passconf','Confirm Password','required||min_lenght[6]|max_lenght[10]|matches[password]');
- 			$this->form_validation->set_rules('recaptcha_response_field','Captcha','required|recaptcha_matches');
  			
  			
  			//If form data is valid continue
