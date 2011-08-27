@@ -7,6 +7,9 @@
 body {
 	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
 }
+#pheed-box {
+	border-bottom:2px solid #CCC;
+}
 #timeline {
 	margin-top:-2%;
 	margin-left:2%;
@@ -18,19 +21,24 @@ body {
 }
 #left-bar,#main-page,#right-bar {
 	float:left;
-	margin-left:2%;
 }
 #main-page {
 	width:50%;
+	border:solid 2px #CCCCCC;
+	padding:20px;
 }
 #left-bar {
 	padding:20px;
 	height:100%;
+	border:thin 1px #CCCCCC;
+	border-left:none;
 }
 #right-bar {
-	padding:20px;
+	padding:10px;
 	width:20%;
 	height:100%;
+	border:thin 1px #CCCCCC;
+	border-right:none;
 }
 #status {
 	position:relative;
@@ -50,6 +58,5 @@ body {
 }
 #menu ul li a:hover {
 	color:#FF6600;
-	font-size:15px;
 }
 

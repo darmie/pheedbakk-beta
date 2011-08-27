@@ -5,7 +5,8 @@
 			<h3>Welcome to PheedBakk</h3>
 			<p>PheedBakk enables you to organise and share your information based on common interests.</p>
 			
-			<?php echo anchor("users/signup",form_button("signup","Sign Up")); ?>
+			<?php echo anchor("users/signup","Sign Up",array("class"=>"submit_btn_blue")); ?>
+            <?php echo anchor("help","Help And Support",array("class"=>"submit_btn_blue")); ?>
 		</div>
 		
 			<div id="login">

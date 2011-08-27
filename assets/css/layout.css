@@ -1,15 +1,17 @@
+@import 'landing.css';
+@import 'page_styles.css';
+@import 'users/user-home.css';
 /*------------------------------------------------------------------------------------------------
 		Layout Styleheet For PheedBakk
 	File: layout.css
 	Author: Patrick Foh
 	Date: 7-08-2011
 ------------------------------------------------------------------------------------------------*/
-/* Import Stylesheets */
-
-	@import 'landing.css';
-	@import 'page_styles.css';
 	
 /* General Style */
+body {
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
 button{
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
@@ -52,7 +54,7 @@ button{
 	}
 /*-------------------------Content------------------------------------------------------------*/
 #content_for_layout {
-	margin-top:9%;
+	margin-top:5%;
 }
 /*----Footer---------------*/
 #footer {

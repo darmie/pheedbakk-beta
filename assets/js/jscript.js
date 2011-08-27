@@ -5,6 +5,7 @@ TopUp.host = url;
 TopUp.images_path = "assets/img/top_up/";
 var loading_src = "http://localhost/pheedbak/assets/img/loading.gif";
 
+//Asynchronous fuctions
 function user_keywords() {
 	var u = url+"keywords/user_keywords";
 	$.getJSON(u,function(data) {
@@ -20,22 +21,6 @@ function user_keywords() {
 		});
 	});
 }
-function delete_keyword(id) {
-	var action_url = url+"keywords/remove_keyword";
-	var keyword = id;
-	var crsf =  $('input[name=ci_csrf_token]').val();
-	var dataString = "keyword="+keyword+"&ci_csrf_token="+crsf;
-	$.ajax({
-		url:action_url,
-		type:'POST',
-		cache:false,
-		data:dataString,
-		success:function(data) {
-			$('#user_keywords').html('');
-			user_keywords();
-		}
-	});
-}
 function latest_pheeds() {
 	var action = url+"pheeds/latest_pheeds";
 	$('#pheed-stream').html('<div class="loading"></div>');
@@ -46,7 +31,7 @@ function latest_pheeds() {
 			$('#pheed-stream').append
 			(
 			'<div class="pheed" id="'+item.pheed_id+'">'+
-			'<p><a href="'+url+'users/start_conversation/'+item.user_id+'">'+item.user_id+'</a></p>'+
+			'<p><a href="'+url+'conversations/start/'+item.user_id+'">'+item.user_id+'</a></p>'+
 			'<p>'+item.pheed+'</p>'+
 			'<div class="pheed_meta">'+
 			'<span>'+item.datetime+' Ago</span>'+
@@ -63,6 +48,24 @@ function latest_pheeds() {
 		});
 	});
 }
+//Keyword functions
+function delete_keyword(id) {
+	var action_url = url+"keywords/remove_keyword";
+	var keyword = id;
+	var crsf =  $('input[name=ci_csrf_token]').val();
+	var dataString = "keyword="+keyword+"&ci_csrf_token="+crsf;
+	$.ajax({
+		url:action_url,
+		type:'POST',
+		cache:false,
+		data:dataString,
+		success:function(data) {
+			$('#user_keywords').html('');
+			user_keywords();
+		}
+	});
+}
+//Pheed functions
 function repheed(pheed_id) {
 	var action = url+'pheeds/repheed';
 	var csrf =  $('input[name=ci_csrf_token]').val();
@@ -86,6 +89,7 @@ function repheed(pheed_id) {
 		}
 	});
 }
+//Pheed Commenting fucntions
 function retrieve_comments(pheed_id) {
 	if($("#" + pheed_id +' .pheed_comments').length == 0 ) {
 	var action = url+'comments/get_comments';
@@ -141,6 +145,40 @@ function post_comment(pheed_id) {
 					retrieve_comments(pheed_id);
 		}
 	});
+}
+//Conversation functions
+function post_conversation_msg() {
+	var action = url+"conversations/post_message";
+	var crsf =  $('input[name=ci_csrf_token]').val();
+	var conv_id = $('input[name=conv_id]').val();
+	var r_id = $('input[name=r_id]').val();
+	var msg = $('textarea[name=message]').val();
+	var dataString = "conv_id="+conv_id+"&message="+msg+"&reciever="+r_id+"&ci_csrf_token="+crsf;
+	
+	$.ajax({
+		url:action,
+		type:'POST',
+		cache:false,
+		data:dataString,
+		error:function() {
+				$.growl("An error occured in sending your message please try again later.");
+			},
+		success:function() {
+			$.growl("Sent");
+				$('#conversation-timeline').append(
+				'<div class="message">'+
+				 '<span>'+msg+'</span>'+
+				'</div>'
+				);
+				$('textarea[name=message]').val() = "";
+			}
+	});
+}
+//Help ad support fucnctions
+function load_page(page) {
+	var action = url+"help/"+page;
+	$('#topic-content').html('');
+	$('#topic-content').fadeIn('slow').load(action);
 }
 $(document).ready(function() {
 	var href = url+"users";

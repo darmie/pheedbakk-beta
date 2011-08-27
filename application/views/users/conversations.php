@@ -13,6 +13,9 @@
     	<div id="conversations">
         	<h3>Your Conversations</h3>
             <div id="user_conversations">
+            <?php foreach($conversations as $gist): ?>
+            	<p>Between me and <?=$gist['reciever_id'] ?></p>
+            <?php endforeach; ?>
             </div>
         </div>
     </div>

@@ -3,8 +3,8 @@
        <div id="menu">
     	<ul>
         	<li><?=anchor('keywords','Keywords') ?></li>
-            <li><?=anchor('users/conversations','Conversations') ?></li>
-            <li><?=anchor('users/discussions','Discussions') ?></li>
+            <li><?=anchor('conversations','Conversations') ?></li>
+            <li><?=anchor('discussions','Discussions') ?></li>
         </ul>
         </div>
     </div>

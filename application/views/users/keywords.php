@@ -3,8 +3,8 @@
     	<div id="menu">
     	<ul>
         	<li><?=anchor('keywords','Keywords') ?></li>
-            <li><?=anchor('users/conversations','Conversations') ?></li>
-            <li><?=anchor('users/discussions','Discussions') ?></li>
+            <li><?=anchor('conversations','Conversations') ?></li>
+            <li><?=anchor('discussions','Discussions') ?></li>
         </ul>
         </div>
     </div>
@@ -13,9 +13,9 @@
     	<div id="keywords">
     		<div id="toolbar">
     			<h3>Your Keywords</h3>
-    			<a href="#keyword_form" class="" 
-                toptions="type=dom,height=q00,width=500,effect = fade,overlayClose = 1,shaded=1">
-                <button class="submit_btn" title="New Keyword">+</button>
+    			<a href="#keyword_form" class="submit_btn"
+                 toptions="type=dom,height=200,width=300,effect = fade,overlayClose = 1,shaded=1">
+              	Add Keyword
                 </a>
     		</div>
     		<div id="user_keywords">
