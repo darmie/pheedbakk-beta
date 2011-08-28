@@ -1,10 +1,12 @@
 <div id="content_for_layout">
 	<div id="left-bar">
-    	<div id="menu">
+       <div id="menu">
     	<ul>
-        	<li><?=anchor('keywords','Keywords') ?></li>
-            <li><?=anchor('users/conversations','Conversations') ?></li>
-            <li><?=anchor('users/discussions','Discussions') ?></li>
+         <li><?=anchor('users','Pheed Stream',array("class"=>"pheed_icon_16")) ?></li>
+        <li><?=anchor('keywords','Keywords',array("class"=>"keyword_icon")) ?></li>
+        <li><?=anchor('conversations','Conversations',array("class"=>"conservation_icon")) ?></li>
+        <li><?=anchor('discussions','Discussions',array("class"=>"discussion_icon")) ?></li>
+        <li><?=anchor('users/invite','Invite',array("class"=>"invite_icon")) ?></li>
         </ul>
         </div>
     </div>
@@ -12,10 +14,12 @@
     <div id="main-page">
     	<div id="conversations">
         	<h3>Your Conversations</h3>
+            <div id="conversations-toolbar">
+            </div>
             <div id="user_conversations">
-            <?php foreach($conversations as $gist): ?>
-            	<p>Between me and <?=$gist['reciever_id'] ?></p>
-            <?php endforeach; ?>
+          	<?php if(count($messages) < 1 ): ?>
+            <p>You have no conversations</p>
+            <?php endif; ?>
             </div>
         </div>
     </div>

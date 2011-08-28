@@ -130,8 +130,9 @@
  		}
  		function activate($id,$code=false) {
  		if ($code !== false) {
+			$data['title'] = "Account Activated | PheedBakk";
 			$activation = $this->ion_auth->activate($id, $code);
-				$this->load->view('templates/header');
+				$this->load->view('templates/header',$data);
 				$this->load->view('users/activated');
 				$this->load->view('templates/footer');
 				

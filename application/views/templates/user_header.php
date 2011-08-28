@@ -5,7 +5,7 @@
 	<title><?php echo $title; ?></title>
     <?php echo link_tag("assets/css/users/user-layout.css"); ?>
 <script type="text/javascript" src="//localhost/pheedbak/assets/js/top_up/top_up-min.js"></script>
-<script type="text/javascript" src="//localhost/pheedbak/assets/js/jquery.growl.js"></script>
+<script type="text/javascript" src="//localhost/pheedbak/assets/js/jquery.gritter.min.js"></script>
 <script type="text/javascript" src="//localhost/pheedbak/assets/js/jscript.js"></script> 
 <!--[if lt IE 9]>
   <script type="text/javascript" src="http://stan-js.googlecode.com/hg/version/0.1/stan.min.js"></script>

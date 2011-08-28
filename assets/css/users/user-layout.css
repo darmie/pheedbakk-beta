@@ -51,7 +51,7 @@ body {
 .pheed_meta span img {
 	margin:0.2em;
 }
-.pheed_meta span .comment_trigger {
+.comment_trigger,.repheed_trigger,.favourite_trigger{
 	cursor:pointer;
 }
 .pheed_comments {

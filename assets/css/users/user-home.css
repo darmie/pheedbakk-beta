@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import 'jquery.gritter.css';
 /*----------------------------------------------------------------------------------------------
 	Stylesheet For User home
 	Author: Patrick Foh
@@ -93,6 +94,10 @@ body {
 }
 #menu ul li a:hover {
 	background:rgba(204,204,204,1);
+	width:100%;
+}
+.active-page {
+	background:#CCCCCC;
 	width:100%;
 }
 

@@ -4,11 +4,16 @@ var url = "http://localhost/pheedbak/";
 TopUp.host = url;
 TopUp.images_path = "assets/img/top_up/";
 var loading_src = "http://localhost/pheedbak/assets/img/loading.gif";
+var pheed_loader_src = "http://localhost/pheedbak/assets/img/pheed-loading.gif";
+var page_loader_src = "http://localhost/pheedbak/assets/img/page-loading.gif";
 
 //Asynchronous fuctions
 function user_keywords() {
 	var u = url+"keywords/user_keywords";
+	$('#user_keywords').html('<div class="loading"></div>');
+		$('.loading').append('<img src="'+pheed_loader_src+'" />');
 	$.getJSON(u,function(data) {
+		$('.loading').fadeOut('slow');
 		$.each(data,function(index,item) {
 				$('#user_keywords').append(
 			'<div class="word">'+
@@ -24,7 +29,7 @@ function user_keywords() {
 function latest_pheeds() {
 	var action = url+"pheeds/latest_pheeds";
 	$('#pheed-stream').html('<div class="loading"></div>');
-	$('.loading').append("Loading Pheeds........");
+	$('.loading').append('<img src="'+pheed_loader_src+'" />');
 	$.getJSON(action,function(data) {
 		$('.loading').fadeOut('slow');
 		$.each(data,function(index,item) {
@@ -41,6 +46,10 @@ function latest_pheeds() {
 			'<span>'+item.repheeds+
 			' Repheeds'+
 			'<img class="repheed_trigger" src="/pheedbak/assets/img/communication.png" title="Click to repheed" onclick="repheed('+item.pheed_id+')">'+
+			'</span>'+
+			'<span>'+
+			'Favourite'+
+			'<img class="favourite_trigger" src="/pheedbak/assets/img/star.png" title="Click to make this a favourite" onclick="favourite_pheed('+item.pheed_id+')" />'+
 			'</span>'+
 			'</div>'+
 			'</div>'
@@ -59,7 +68,21 @@ function delete_keyword(id) {
 		type:'POST',
 		cache:false,
 		data:dataString,
+		error:function () {
+			$.gritter.add({
+				title:'Notice',
+				text:'An error occured while deleting the keyword, please try again',
+				sticky:false,
+				time:'3000'
+			});
+		},
 		success:function(data) {
+			 $.gritter.add({
+				title: 'Notice!',
+				text: 'The Keyword has been deleted from your list',
+				sticky: false,
+				time: '3000'
+			});
 			$('#user_keywords').html('');
 			user_keywords();
 		}
@@ -88,6 +111,9 @@ function repheed(pheed_id) {
 			});
 		}
 	});
+}
+function favourite_pheed(pheed_id) {
+	alert(pheed_id);
 }
 //Pheed Commenting fucntions
 function retrieve_comments(pheed_id) {
@@ -178,11 +204,21 @@ function post_conversation_msg() {
 function load_page(page) {
 	var action = url+"help/"+page;
 	$('#topic-content').html('');
-	$('#topic-content').fadeIn('slow').load(action);
+	$('#topic-content').append('<img src="'+page_loader_src+'" />').load(action);
 	$("#" + page).addClass('current');
 	$("#" + page).prev('a .current').removeClass('current');
 }
+//Misc functions
+function active_page() {
+	$("#menu ul li a").each(function() {
+			var hreflink = $(this).attr("href");
+			if (hreflink.toLowerCase()==location.href.toLowerCase()) {
+				$(this).addClass("active-page");
+			}
+		});
+}
 $(document).ready(function() {
+	active_page();
 	var href = url+"users";
 	var keywords_url = url+"keywords";
 	if(document.location.href == href) {
@@ -191,6 +227,18 @@ $(document).ready(function() {
 	if(document.location.href == keywords_url) {
 	user_keywords();
 	}
+	
+	$.extend($.gritter.options, {
+
+		    position: 'top-right', // possibilities: bottom-left, bottom-right, top-left, top-right
+
+			fade_in_speed: 100, // how fast notifications fade in (string or int)
+
+			fade_out_speed: 100, // how fast the notices fade out
+
+			time: 3000 // hang on the screen for...
+
+		});
 	
 	//Pheed Posting
 	$(function () {
