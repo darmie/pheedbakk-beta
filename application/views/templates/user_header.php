@@ -20,7 +20,7 @@
 	
     <div id="search-box">
     	<?php echo form_open("",array("id"=>"site-search")); ?>
-        <input type="text" name="term">
+        <input type="text" name="term" placeholder="Search">
         <input type="submit" value="Search">
         <?php echo form_close(); ?>
     </div>

@@ -1,10 +1,12 @@
 <div id="content_for_layout">
 	<div id="left-bar">
-    	<div id="menu">
+       <div id="menu">
     	<ul>
-        	<li><?=anchor('keywords','Keywords') ?></li>
-            <li><?=anchor('conversations','Conversations') ?></li>
-            <li><?=anchor('discussions','Discussions') ?></li>
+         <li><?=anchor('users','Pheed Stream',array("class"=>"pheed_icon_16")) ?></li>
+        <li><?=anchor('keywords','Keywords',array("class"=>"keyword_icon")) ?></li>
+        <li><?=anchor('conversations','Conversations',array("class"=>"conservation_icon")) ?></li>
+        <li><?=anchor('discussions','Discussions',array("class"=>"discussion_icon")) ?></li>
+        <li><?=anchor('users/invite','Invite',array("class"=>"invite_icon")) ?></li>
         </ul>
         </div>
     </div>
@@ -21,7 +23,7 @@
     		<div id="user_keywords">
     		</div>
     	</div>
-    	<div id="keyword_form" class="hidden-inline-form">
+    	<div id="keyword_form" style="display:none">
     		<?php echo form_open("",array("id"=>"newKeyword"));?>
     		<?php echo form_label("Enter a keyword","keyword");?>
     		<?php echo form_input("keyword",""); ?>

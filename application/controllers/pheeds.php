@@ -70,23 +70,23 @@
 			$this->load->helper('date');
 			//Current time(unix timetamp)
             $time = time();
-			//pheed
+			//pheeds
 			$pheeds = array();
-			if(count($data) != 0 ) {
-					for($i =0; $i<count($data); $i++) {
-						for($j=0; $j<count($data[$i]); $j++) {
-							$pheed['pheed_id'] = $data[$i][$j]->pheed_id;
-							$pheed['user_id'] = $this->user_model->return_username($data[$i][$j]->user_id);
-							$pheed['pheed'] = $data[$i][$j]->pheed;
-							$pheed['datetime'] = timespan($data[$i][$j]->datetime,$time);
-							$pheed['repheeds'] = $data[$i][$j]->repheeds;
-							$pheed['comments'] = $this->comment_model->count_comments($data[$i][$j]->pheed_id);
-							
-							$pheeds[] = $pheed;
-						}
-					}
-					echo json_encode($pheeds);
+			if(count($data) > 0 ) {
+				foreach($data as $pheed) {
+					$row['pheed_id'] = $pheed->pheed_id;
+					$row['user_id'] = $this->user_model->return_username($pheed->user_id);
+					$row['pheed'] = $pheed->pheed;
+					$row['datetime'] = timespan($pheed->datetime,$time);
+					$row['comments'] = $this->comment_model->count_comments($pheed->pheed_id);
+					$row['repheeds'] = $pheed->repheeds;
+					$pheeds[] = $row;
 				}
+			  
+			  echo json_encode($pheeds);
+			}
+			} else {
+				
 			}
 			return false;
 		}

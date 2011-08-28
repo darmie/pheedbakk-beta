@@ -31,7 +31,7 @@ function latest_pheeds() {
 			$('#pheed-stream').append
 			(
 			'<div class="pheed" id="'+item.pheed_id+'">'+
-			'<p><a href="'+url+'conversations/start/'+item.user_id+'">'+item.user_id+'</a></p>'+
+			'<p><a class="user_trigger" href="#">'+item.user_id+'</a></p>'+
 			'<p>'+item.pheed+'</p>'+
 			'<div class="pheed_meta">'+
 			'<span>'+item.datetime+' Ago</span>'+
@@ -114,7 +114,7 @@ function retrieve_comments(pheed_id) {
 			});
 			$('#' + pheed_id).append(
 				'<div id="comment_box" class="'+pheed_id+'">'+
-					'<textarea id="comment" cols="30">'+
+					'<textarea id="comment" cols="50">'+
 					'</textarea><br>'+
 					'<div id="loading"></div>'+
 					'<input type="button" class="submit_btn" value="comment" onclick="post_comment('+pheed_id+')" />'+
@@ -179,6 +179,8 @@ function load_page(page) {
 	var action = url+"help/"+page;
 	$('#topic-content').html('');
 	$('#topic-content').fadeIn('slow').load(action);
+	$("#" + page).addClass('current');
+	$("#" + page).prev('a .current').removeClass('current');
 }
 $(document).ready(function() {
 	var href = url+"users";
@@ -279,5 +281,4 @@ $(document).ready(function() {
 			e.preventDefault();
 		});
 	});
-	
 });

@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* user forms */
 .hidden-inline-form {
-	display:none;
+
 }
 .submit_btn {
 	-moz-border-radius:10px;
@@ -18,10 +18,7 @@
 	margin-bottom:10px;
 	margin-top:10px;
 	text-decoration:none;
-	padding-right:15px;
-	padding-left:15px;
-	padding-bottom:10px;
-	padding-top:10px;
+	padding:10px;
 	margin-bottom:20px;
 }
 /*-----Search-------*/
@@ -58,3 +55,7 @@
 #newKeyword label{
 	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
 }
+/*--------------comments----------------------*/
+#comment_box textarea,submit{
+		margin-left:20px;
+	}

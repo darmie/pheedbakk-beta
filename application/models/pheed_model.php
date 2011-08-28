@@ -20,23 +20,19 @@
 	 * Retrieeves the latest pheeds
 	 */
 	function get_latest_pheeds() {
-     $data = $this->user_keywords($this->ion_auth->user_id);
-	 $keyword = $data;
-	 $user_id = $this->ion_auth->user_id;
-			foreach($keyword as $key => $word) {
-				
-				$q = "SELECT *,COUNT(pheed_comments.comment_id) as comments
-				FROM pheeds
-				LEFT JOIN pheed_comments ON pheed_comments.P_id=pheeds.pheed_id
-				WHERE pheed LIKE '%$word%' OR user_id='$user_id'
-				GROUP BY pheeds.pheed_id
-				ORDER BY datetime DESC";
-				$result = $this->db->query($q);
-				$rows[] = $result->result();
-				
-			}
-			return $rows;
-	}
+    $keywords = $this->user_keywords($this->ion_auth->user_id);
+    $q = "SELECT pheed_id,pheed,user_id,datetime,repheeds,COUNT(pheed_comments.comment_id) as comments
+          FROM pheeds
+          LEFT JOIN pheed_comments ON pheed_comments.P_id=pheeds.pheed_id
+          WHERE (pheed LIKE '%".implode("%' OR pheed LIKE '%",$keywords)."%') OR user_id='".$this->ion_auth->user_id."'
+          GROUP BY pheeds.pheed_id
+          ORDER BY datetime DESC";
+    $result = $this->db->query($q);
+    $rows = $result->result();
+    return $rows;
+}
+	 
+	 
 	 /**
 	 * Add a new pheed to database
 	 * @var array options

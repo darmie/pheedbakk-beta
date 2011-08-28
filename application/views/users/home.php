@@ -2,9 +2,11 @@
 	<div id="left-bar">
        <div id="menu">
     	<ul>
-        	<li><?=anchor('keywords','Keywords') ?></li>
-            <li><?=anchor('conversations','Conversations') ?></li>
-            <li><?=anchor('discussions','Discussions') ?></li>
+         <li><?=anchor('users','Pheed Stream',array("class"=>"pheed_icon_16")) ?></li>
+        <li><?=anchor('keywords','Keywords',array("class"=>"keyword_icon")) ?></li>
+        <li><?=anchor('conversations','Conversations',array("class"=>"conservation_icon")) ?></li>
+        <li><?=anchor('discussions','Discussions',array("class"=>"discussion_icon")) ?></li>
+        <li><?=anchor('users/invite','Invite',array("class"=>"invite_icon")) ?></li>
         </ul>
         </div>
     </div>
@@ -12,12 +14,13 @@
     <div id="main-page">
     <div id="timeline">
     	<div id="toolbar">
-    		<h3>Pheed Stream</h3>
+    		<h3 class="pheed_icon">Pheed Stream</h3>
+            <?=anchor("pheeds/favourites/".$user_id,"Favourtite Pheeds",array("title"=>"Click to see your favourite pheeds")) ?>
         </div>
         
     	<div id="pheed-box">
         	<?php echo form_open("",array("id"=>"pheedform")); ?>
-            	<textarea name="pheed" cols="45" id="pheed">
+            	<textarea name="pheed" cols="50" id="pheed">
                 </textarea><br />
                 <input type="submit" value="Pheed" class="submit_btn" />
             <?php echo form_close(); ?>

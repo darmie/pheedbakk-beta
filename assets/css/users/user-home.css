@@ -10,6 +10,37 @@ body {
 #pheed-box {
 	border-bottom:2px solid #CCC;
 }
+ a {
+	color:#FF6600;
+	text-decoration:none;
+}
+ a:hover {
+	color:#0099FF;
+}
+.conservation_icon:before {
+	content:url(/pheedbak/assets/img/converse.png);
+	margin:0.3em;
+}
+.keyword_icon:before {
+	content:url(/pheedbak/assets/img/keywords.png);
+	margin:0.3em;
+}
+.discussion_icon:before {
+	content:url(/pheedbak/assets/img/discuss.png);
+	margin:0.3em;
+}
+.pheed_icon:before {
+	content:url(/pheedbak/assets/img/feed.png);
+	margin:0.3em;
+}
+.pheed_icon_16:before {
+	content:url(/pheedbak/assets/img/feed_16.png);
+	margin:0.3em;
+}
+.invite_icon:before {
+	content:url(/pheedbak/assets/img/email.png);
+	margin:0.3em;
+}
 #timeline {
 	margin-top:-2%;
 	margin-left:2%;
@@ -28,6 +59,7 @@ body {
 	padding:20px;
 }
 #left-bar {
+	margin-left:-2%;
 	padding:20px;
 	height:100%;
 	border:thin 1px #CCCCCC;
@@ -49,14 +81,18 @@ body {
 	list-style:none;
 	padding:4px;
 	font-family:Arial, Helvetica, sans-serif;
-	padding:2px;
+	padding:5px;
+	width:100%;
 }
 #menu ul li a {
 	color:rgba(0,153,255,1);
 	text-decoration:none;
-	font-size:14px;
+	font-size:15px;
+	padding:4px;
+	margin:0.4em;
 }
 #menu ul li a:hover {
-	color:#FF6600;
+	background:rgba(204,204,204,1);
+	width:100%;
 }
 
