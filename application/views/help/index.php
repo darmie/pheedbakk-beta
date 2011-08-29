@@ -2,11 +2,11 @@
 	<div id="left-bar">
     <h4>Topics</h4>
     	<ul class="help_menu">
-        	<li><a id="overview" href="help">Overview</a></li>
-        	<li><a id="pheeds" href="#" onclick="load_page(this.id)">Pheeds</a></li>
-            <li><a id="keywords" href="#" onclick="load_page(this.id)">Keywords</a></li>
-            <li><a id="conversations" href="#" onclick="load_page(this.id)">Conversations</a></li>
-            <li><a id="discussions" href="#" onclick="load_page(this.id)">Discussions</a></li>
+        	<li><a id="overview" href="help" class="current">Overview</a></li>
+        	<li><a id="pheeds" href="#pheeds" onclick="load_page(this.id)">Pheeds</a></li>
+            <li><a id="keywords" href="#keywords" onclick="load_page(this.id)">Keywords</a></li>
+            <li><a id="conversations" href="#conversations" onclick="load_page(this.id)">Conversations</a></li>
+            <li><a id="discussions" href="#discussions" onclick="load_page(this.id)">Discussions</a></li>
         </ul>
     </div>
     

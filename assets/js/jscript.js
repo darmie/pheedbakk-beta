@@ -36,7 +36,8 @@ function latest_pheeds() {
 			$('#pheed-stream').append
 			(
 			'<div class="pheed" id="'+item.pheed_id+'">'+
-			'<p><a class="user_trigger" href="#">'+item.user_id+'</a></p>'+
+			'<p><a class="user_trigger" href="users/info/'+item.user_id+'">'
+			+item.user_id+'</a></p>'+
 			'<p>'+item.pheed+'</p>'+
 			'<div class="pheed_meta">'+
 			'<span>'+item.datetime+' Ago</span>'+
@@ -203,10 +204,10 @@ function post_conversation_msg() {
 //Help ad support fucnctions
 function load_page(page) {
 	var action = url+"help/"+page;
+	$('.current').removeClass('current');
 	$('#topic-content').html('');
 	$('#topic-content').append('<img src="'+page_loader_src+'" />').load(action);
-	$("#" + page).addClass('current');
-	$("#" + page).prev('a .current').removeClass('current');
+	$("#" +page).addClass('current');
 }
 //Misc functions
 function active_page() {
@@ -230,14 +231,10 @@ $(document).ready(function() {
 	
 	$.extend($.gritter.options, {
 
-		    position: 'top-right', // possibilities: bottom-left, bottom-right, top-left, top-right
-
+		    position: 'top-right',// possibilities: bottom-left, bottom-right, top-left, top-right
 			fade_in_speed: 100, // how fast notifications fade in (string or int)
-
 			fade_out_speed: 100, // how fast the notices fade out
-
 			time: 3000 // hang on the screen for...
-
 		});
 	
 	//Pheed Posting
@@ -255,6 +252,14 @@ $(document).ready(function() {
 				type:'POST',
 				data:dataString,
 				cache:false,
+				error:function() {
+						$.gritter.add({
+							title:'Notice!',
+							text:'Oops an error occured while posting your pheed,please try again',
+							sticky:false,
+							time: '3000'
+						});
+					},
 				success:function(html) {
 					$('#status').html('');
 					$('#status').append(html).fadeOut('slow',function() {
