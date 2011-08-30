@@ -9,6 +9,9 @@
 body {
 	background:rgba(255,255,255,1);
 }
+.logo img{
+	border:none;
+}
 .floating {
 	float:left;
 	margin-left:2%;
