@@ -114,7 +114,32 @@ function repheed(pheed_id) {
 	});
 }
 function favourite_pheed(pheed_id) {
-	alert(pheed_id);
+	var action = url+"pheeds/favourite_pheed";
+	var crsf = $('input[name=ci_csrf_token]').val();
+	var dataString = "pheed_id="+pheed_id+"&ci_csrf_token="+crsf;
+	$.ajax({
+		url:action,
+		type:'POST',
+		data:dataString,
+		cache:false,
+		dataType:'json',
+		error: function() {
+			$.gritter.add({
+				title:'Notice!',
+				text:'Oops we did something wrong, unable to complete your last action',
+				sticky:false,
+				time:'4000'
+			});
+			},
+		success:function(data) {
+				$.gritter.add({
+				title:'Notice!',
+				text:data.message,
+				sticky:false,
+				time:'4000'
+				});
+		}
+	});
 }
 //Pheed Commenting fucntions
 function retrieve_comments(pheed_id) {
@@ -219,6 +244,13 @@ function active_page() {
 		});
 }
 $(document).ready(function() {
+		$.extend($.gritter.options, {
+		    position: 'top-right',// possibilities: bottom-left, bottom-right, top-left, top-right
+			fade_in_speed: 100, // how fast notifications fade in (string or int)
+			fade_out_speed: 100, // how fast the notices fade out
+			time: 3000 // hang on the screen for...
+		});
+		
 	active_page();
 	var href = url+"users";
 	var keywords_url = url+"keywords";
@@ -228,15 +260,6 @@ $(document).ready(function() {
 	if(document.location.href == keywords_url) {
 	user_keywords();
 	}
-	
-	$.extend($.gritter.options, {
-
-		    position: 'top-right',// possibilities: bottom-left, bottom-right, top-left, top-right
-			fade_in_speed: 100, // how fast notifications fade in (string or int)
-			fade_out_speed: 100, // how fast the notices fade out
-			time: 3000 // hang on the screen for...
-		});
-	
 	//Pheed Posting
 	$(function () {
 		$("#pheedform input[type=submit]").click(function(e) {

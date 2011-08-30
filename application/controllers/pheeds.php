@@ -90,6 +90,39 @@
 			}
 			return false;
 		}
+		
+		function favourites() {
+		}
+		
+		function favourite_pheed() {
+			if($this->isLogged() == true) {
+				//Load Model
+				$this->load->model('pheed_model');
+				///The id of the pheed to be favourited
+				$pheed_id = $this->input->post('pheed_id');
+				//The id of the user making the request
+				$user_id = $this->ion_auth->user_id;
+				//Current time(UNIX timestamp)
+				$time = time();
+				//build data array
+				$data = array(
+					"U_id"=>$user_id,
+					"P_id"=>$pheed_id,
+					"datetime"=>$time
+				);
+				if($this->pheed_model->make_favourite($data) == true) {
+					$response = array(
+					"message"=>"The pheed has been added to your favourite list"
+					);
+					echo json_encode($response);
+				} else {
+					$response = array(
+					"message"=>"The pheed has already been added to your favourite list"
+					);
+					echo json_encode($response);
+				}
+			}
+		}
 	 /**
 	 * End of file pheeds.php
 	 * Location: application/controller/pheeds

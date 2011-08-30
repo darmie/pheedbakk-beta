@@ -50,7 +50,7 @@
 				$email = $this->input->post('email');
 				$password = $this->input->post('password');
  			}
-			if($this->ion_auth->login($email,$password,$remember) !== false) {
+			if($this->ion_auth->login(@$email,@$password,@$remember) !== false) {
 					redirect('users');
 				} else {
 					$data['message'] = $this->ion_auth->errors();

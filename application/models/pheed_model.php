@@ -16,7 +16,6 @@
 					return $keywords;
 	 }
 	/**
-	 * 
 	 * Retrieeves the latest pheeds
 	 */
 	function get_latest_pheeds() {
@@ -68,5 +67,31 @@
 			$pheed = $result->pheed;
 			$repheeds = $result->repheeds;
 			
+	   }
+	   /**
+	   * Adds a pheed a users favourite pheeds
+	   * @param array $options
+	   * $options['U_id'] = user id
+	   * $options['P_id'] = pheed id
+	   * $options['datetime'] = time of favourite action
+	   */
+	   function make_favourite($options = array()) {
+		   //Check if the pheed already esists
+		   $check_query = $this->db->select('*')
+		   							->from('favourite_pheeds')
+									->where('U_id',$options['U_id'])
+									->where('P_id',$options['P_id'])
+									->get();
+					$result = $check_query->result();
+					if(count($result) == 1 ) {
+						return false;
+					} else {
+					   $q = $this->db->insert('favourite_pheeds',$options);
+					   if($this->db->affected_rows() > 0 ) {
+						   return true;
+							} else {
+						   return false;
+					   }
+			}
 	   }
  }
