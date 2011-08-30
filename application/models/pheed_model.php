@@ -94,4 +94,21 @@
 					   }
 			}
 	   }
+	   function user_favourite_pheeds($user_id) {
+		   $pheed = array();
+		   $q = $this->db->select('*')
+		   				  ->from('favourite_pheeds')
+						  ->where('U_id',$user_id)
+						  ->get();
+			$result = $q->result();
+			foreach($result as $fav) {
+				$query = $this->db->select('*')
+									->from('pheeds')
+									->where('pheed_id',$fav->P_id)
+									->get();
+									$rows = $query->result();
+					$pheed[] = $rows;
+			}
+			return $pheed;
+	   }
  }

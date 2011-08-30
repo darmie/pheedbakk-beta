@@ -91,7 +91,15 @@
 			return false;
 		}
 		
-		function favourites() {
+		function favourites($user_id) {
+			if($this->isLogged() == true) {
+				//load model
+				$this->load->model('pheed_model');
+				$pheeds = $this->pheed_model->user_favourite_pheeds($user_id);
+				echo "<pre>";
+					print_r($pheeds);
+				echo "</pre>";
+			}
 		}
 		
 		function favourite_pheed() {
