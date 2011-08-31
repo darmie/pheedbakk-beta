@@ -11,13 +11,6 @@ body {
 #pheed-box {
 	border-bottom:2px solid #CCC;
 }
- a {
-	color:#FF6600;
-	text-decoration:none;
-}
- a:hover {
-	color:#0099FF;
-}
 .conservation_icon:before {
 	content:url(/pheedbak/assets/img/converse.png);
 	margin:0.3em;

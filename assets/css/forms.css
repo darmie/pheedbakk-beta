@@ -56,7 +56,7 @@ input {
 	padding-right:20px;
 	padding-bottom:10px;
 	padding-top:10px;
-	color:#FFF;
+	color:rgba(255,255,255,1);
 	font-weight:bold;
 	width:100px;
 	height:30px;
@@ -67,7 +67,7 @@ input {
 	font-size:13px;
 }
 .submit_btn_blue:hover {
-	background:#FF9900;
+	background:#FF6600;
 }
 
 /* Specific Form Styles*/

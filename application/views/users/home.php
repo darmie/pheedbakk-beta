@@ -15,7 +15,7 @@
     <div id="timeline">
     	<div id="toolbar">
     		<h3 class="pheed_icon">Pheed Stream</h3>
-            <?=anchor("pheeds/favourites/".$user_id,"Favourtite Pheeds",array("title"=>"Click to see your favourite pheeds")) ?>
+            <?=anchor("pheeds/favourites","Favourtite Pheeds",array("title"=>"Click to see your favourite pheeds")) ?>
         </div>
         
     	<div id="pheed-box">
@@ -43,5 +43,8 @@
             <p>It display pheeds you want see</p>
             <p>Visit the help and support section to get started</p>
         </div>
+    </div>
+    
+    <div id="user-info-popup" style="display:none">
     </div>
 </div>

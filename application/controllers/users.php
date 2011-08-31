@@ -112,6 +112,17 @@
  			
  		}
  		
+		function info($username) {
+			if($this->isLogged() == true) {
+				//Load model
+				$this->load->model('user_model');
+				$info = $this->user_model->retrieve_user_info($username);
+				echo "<pre>";
+					print_r($info);
+				echo "</pre>";
+			}
+		}
+		
  		function account_created() {
  			
  			//Data to be passed to the view

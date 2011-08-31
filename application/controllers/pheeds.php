@@ -91,14 +91,22 @@
 			return false;
 		}
 		
-		function favourites($user_id) {
+		function favourites() {
 			if($this->isLogged() == true) {
 				//load model
 				$this->load->model('pheed_model');
-				$pheeds = $this->pheed_model->user_favourite_pheeds($user_id);
-				echo "<pre>";
-					print_r($pheeds);
-				echo "</pre>";
+				$pheed = array();
+				$pheeds = $this->pheed_model->user_favourite_pheeds($this->ion_auth->user_id);
+				
+				$data['title'] = "Your Favourite Pheeds | PheedBakk";
+				$data['username'] = $this->ion_auth->username;
+				$data['user_id'] = $this->ion_auth->user_id;
+				$data['fav_pheeds'] = $pheeds;
+				
+				
+				$this->load->view('templates/user_header',$data);
+				$this->load->view('users/favourite_pheeds');
+				$this->load->view('templates/footer');
 			}
 		}
 		

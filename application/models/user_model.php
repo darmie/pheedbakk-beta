@@ -60,5 +60,15 @@
   	$name = $fn ." ".$ln;
   	return $name;
   }
-
+   
+   function retrieve_user_info($username) {
+	   $q = $this->db->select('*')
+	   				  ->from('users')
+					  ->join('profiles','profiles.user_id=users.id','left')
+					  ->join('keywords','keywords.U_id=users.id','left')
+					  ->where('username',$username)
+					  ->get();
+		$result = $q->result();
+		return $result;
+   }
 }

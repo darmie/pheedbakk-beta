@@ -9,6 +9,9 @@
 body {
 	background:rgba(255,255,255,1);
 }
+.loading {
+	margin:10px 10px 10px 10px;
+}
 .logo img{
 	border:none;
 }
